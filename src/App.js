@@ -1,7 +1,16 @@
+// components
+import { ResultsContainer } from "./components/Results";
+import { SearchContainer } from "./components/Search";
+import { NominationsContainer } from "./components/Nominations";
+
 function App() {
   return (
     <div className="App">
-        <h1>test</h1>
+      <SearchContainer />
+      <section className= 'lowContainer'>
+        <ResultsContainer />
+        <NominationsContainer />
+      </section>
     </div>
   );
 }
