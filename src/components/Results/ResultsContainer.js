@@ -21,8 +21,8 @@ export const ResultsContainer = () => {
   }, [searchTerm]);
 
   return (
-    <div className="resultsCont">
+    <section className="resultsCont">
       <ResultsRender movies={movies} />
-    </div>
+    </section>
   );
 };

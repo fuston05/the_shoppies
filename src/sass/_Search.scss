@@ -1,0 +1,20 @@
+// ** SEARCH STYLES **
+
+#searchInput{
+  border-width: 1px;
+  border-radius: 0;
+  font-size: $pSize;
+  padding: 3px;
+}
+button.ant-btn{
+  padding: 3px;
+  font-size: $pSize;
+  border-width: 1px;
+  border-left: none;
+  background-color: lightblue;
+
+  &:hover{
+    background-color: blue;
+    color: #aaa;
+  }
+}

@@ -4,13 +4,11 @@ import React, { useState, useEffect } from "react";
 import { RenderSearch } from "./SearchRender";
 
 export const SearchContainer = () => {
-  
-
   return (
-    <div className="searchCont">
+    <section className="searchCont">
       <h1>searchCont</h1>
-      
+
       <RenderSearch />
-    </div>
+    </section>
   );
 };

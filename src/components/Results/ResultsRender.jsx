@@ -1,7 +1,7 @@
 // ** RESULTS JSX FILE **
 import React from "react";
 
-export const ResultsRender = ({movies}) => {
+export const ResultsRender = ({ movies }) => {
   return (
     <div className="movieCard">
       <h2>results render!</h2>
