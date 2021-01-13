@@ -4,15 +4,13 @@ import React from "react";
 import { Input, Space } from 'antd';
 const { Search } = Input;
 
-const onSearch = (value) => console.log(value);
-
-export const RenderSearch = () => {
+export const RenderSearch = ({handleChange, searchTerm,onSearch}) => {
   return (
     <div className="renderSearch">
       <label htmlFor="searchInput">Movie Title</label>
       
       <Space direction="vertical">
-      <Search id= 'searchInput' placeholder="Search" onSearch={onSearch} />
+      <Search id= 'searchInput' placeholder="Search" onChange= {(e) => handleChange(e)} value= {searchTerm} enterButton/>
       </Space>
 
     </div>

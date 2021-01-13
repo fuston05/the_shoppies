@@ -22,12 +22,16 @@
     border-width: 1px;
     border-radius: 0;
     font-size: $pSize;
-    padding: 3px;
+    padding: 5px;
     width: 95%;
   }
 
+  input:focus, button:focus{
+    outline:none;
+  }
+
   button.ant-btn {
-    padding: 3px;
+    padding: 5px;
     font-size: $pSize;
     border-width: 1px;
     border-left: none;

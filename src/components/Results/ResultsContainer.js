@@ -4,9 +4,8 @@ import { ResultsRender } from "./ResultsRender";
 // api
 import { fetchData } from "../api";
 
-export const ResultsContainer = () => {
+export const ResultsContainer = ({searchTerm}) => {
   const [movies, setMovies] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     fetchData(searchTerm)
