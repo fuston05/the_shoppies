@@ -1,20 +1,41 @@
 // ** SEARCH STYLES **
+.searchCont {
+  border: 1px solid #333;
+  padding: 2% 2% 3% 2%;
+  width: 100%;
 
-#searchInput{
-  border-width: 1px;
-  border-radius: 0;
-  font-size: $pSize;
-  padding: 3px;
-}
-button.ant-btn{
-  padding: 3px;
-  font-size: $pSize;
-  border-width: 1px;
-  border-left: none;
-  background-color: lightblue;
+  .ant-space-item{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
-  &:hover{
-    background-color: blue;
-    color: #aaa;
+  .ant-input-search{
+    width: 100%;
+  }
+
+  label{
+    font-size: $pSize;
+  }
+
+  #searchInput {
+    border-width: 1px;
+    border-radius: 0;
+    font-size: $pSize;
+    padding: 3px;
+    width: 95%;
+  }
+
+  button.ant-btn {
+    padding: 3px;
+    font-size: $pSize;
+    border-width: 1px;
+    border-left: none;
+    background-color: lightblue;
+
+    &:hover {
+      background-color: blue;
+      color: #aaa;
+    }
   }
 }

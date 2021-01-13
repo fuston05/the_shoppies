@@ -6,8 +6,6 @@ import { RenderSearch } from "./SearchRender";
 export const SearchContainer = () => {
   return (
     <section className="searchCont">
-      <h1>searchCont</h1>
-
       <RenderSearch />
     </section>
   );
