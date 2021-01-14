@@ -1,8 +1,7 @@
 // ** RESULTS JSX FILE **
-import React, { useEffect } from "react";
+import React from "react";
 
 export const ResultsRender = ({ nominations, movies, nominate }) => {
-  useEffect(() => {}, [nominations]);
 
   return (
     <div className="movieCard">
@@ -14,6 +13,7 @@ export const ResultsRender = ({ nominations, movies, nominate }) => {
               <span>{movie.Title}</span>
               <span>{movie.Year}</span>
               <span>
+                {/* disable btn if already nominated */}
                 {nominations.includes(movie) ? (
                   <button disabled onClick={() => nominate(movie)}>
                     Nominate

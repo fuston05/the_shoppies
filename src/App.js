@@ -21,7 +21,7 @@ function App() {
       <section className="lowContainer">
         <ResultsContainer nominations={nominations} nominate={nominate} searchTerm={searchTerm} />
         
-        <NominationsContainer nominations= {nominations} />
+        <NominationsContainer setNominations={setNominations} nominations= {nominations} />
       </section>
     </div>
   );
