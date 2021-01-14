@@ -1,7 +1,7 @@
 // ** RESULTS JSX FILE **
 import React from "react";
 
-export const ResultsRender = ({ movies }) => {
+export const ResultsRender = ({ movies, nominate }) => {
   return (
     <div className="movieCard">
       <h2>results render!</h2>
@@ -12,7 +12,7 @@ export const ResultsRender = ({ movies }) => {
               <span>{movie.Title}</span>
               <span>{movie.Year}</span>
               <span>
-                <button>Nominate</button>
+                <button onClick={() => nominate(movie) }>Nominate</button>
               </span>
             </div>
           );
