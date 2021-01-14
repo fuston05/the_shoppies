@@ -2,10 +2,24 @@
 
 import React from "react";
 
-export const NominationsRender = () => {
+export const NominationsRender = ({ nominations, removeNominee }) => {
+
   return (
-    <>
-      <h3>Nominations Render!</h3>
-    </>
+    <section className= 'nominations'>
+      <h3>Nominations</h3>
+      {
+        nominations && nominations.map(nominee => {
+          return (
+            <div className= 'nomineeCard' key= {nominee.imdbID}>
+              <span>{nominee.Title}</span>
+              <span>{nominee.Year}</span>
+              <span>
+                <button onClick= {() => {removeNominee(nominee)}}>Remove</button>
+              </span>
+            </div>
+          )
+        })
+      }
+    </section>
   );
 };

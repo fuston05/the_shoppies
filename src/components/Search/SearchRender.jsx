@@ -4,7 +4,7 @@ import React from "react";
 import { Input, Space } from 'antd';
 const { Search } = Input;
 
-export const RenderSearch = ({handleChange, searchTerm,onSearch}) => {
+export const RenderSearch = ({handleChange, searchTerm}) => {
   return (
     <div className="renderSearch">
       <label htmlFor="searchInput">Movie Title</label>

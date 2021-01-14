@@ -5,18 +5,23 @@ import { SearchContainer } from "./components/Search";
 import { NominationsContainer } from "./components/Nominations";
 
 function App() {
-  const nominate = (movieId) => {
-    console.log('nominated: ', movieId);
-  }
-
   const [searchTerm, setSearchTerm] = useState("");
+  const [nominations, setNominations] = useState([]);
+
+  const nominate = (movie) => {
+    setNominations([...nominations, movie]);
+  }
+  
   return (
     <div className="App">
+      {console.log('nominations: ', nominations)}
       <h1>The Shoppies</h1>
       <SearchContainer setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
+
       <section className="lowContainer">
-        <ResultsContainer nominate= {nominate} searchTerm={searchTerm} />
-        <NominationsContainer />
+        <ResultsContainer nominations={nominations} nominate={nominate} searchTerm={searchTerm} />
+        
+        <NominationsContainer nominations= {nominations} />
       </section>
     </div>
   );

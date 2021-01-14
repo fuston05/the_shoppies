@@ -4,7 +4,7 @@ import { ResultsRender } from "./ResultsRender";
 // api
 import { fetchData } from "../api";
 
-export const ResultsContainer = ({ searchTerm, nominate }) => {
+export const ResultsContainer = ({ searchTerm, nominate, nominations }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export const ResultsContainer = ({ searchTerm, nominate }) => {
 
   return (
     <section className="resultsCont">
-      <ResultsRender nominate= {nominate} movies={movies} />
+      <ResultsRender nominations={nominations} nominate= {nominate} movies={movies} />
     </section>
   );
 };

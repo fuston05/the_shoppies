@@ -1,13 +1,22 @@
 // ** NOMINATIONSCONTAINER LOGIC FILE **
 
-import React from "react";
+import React, { useState } from "react";
 // components
 import { NominationsRender } from "./NominationsRender";
 
-export const NominationsContainer = () => {
+export const NominationsContainer = ({ nominations, setNominations }) => {
+
+  const removeNominee = (nominee) => {
+    console.log("remove: ", nominee);
+  };
+
   return (
     <div className="nominationsCont">
-      <NominationsRender />
+      <NominationsRender
+        removeNominee={removeNominee}
+        setNominations={setNominations}
+        nominations={nominations}
+      />
     </div>
   );
 };
