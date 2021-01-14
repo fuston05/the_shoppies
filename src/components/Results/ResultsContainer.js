@@ -4,7 +4,7 @@ import { ResultsRender } from "./ResultsRender";
 // api
 import { fetchData } from "../api";
 
-export const ResultsContainer = ({ searchTerm, nominate, nominations }) => {
+export const ResultsContainer = ({searchTerm, nominate, nominations }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
