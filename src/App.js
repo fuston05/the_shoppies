@@ -14,9 +14,7 @@ function App() {
 
   useEffect(() => {
     if (!cookies.nominationsCookie && nominations.length) {
-      setCookie("nominationsCookie", nominations, {
-        maxAge: 10000,
-      });
+      setCookie("nominationsCookie", nominations);
     }
   }, [nominations]);
   
@@ -41,6 +39,9 @@ function App() {
         />
 
         <NominationsContainer
+          cookies= {cookies}
+          removeCookie={removeCookie}
+          setCookie={setCookie}
           setNominations={setNominations}
           nominations={nominations}
         />
