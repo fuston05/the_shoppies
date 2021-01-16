@@ -52,3 +52,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 - [dotenv](https://www.npmjs.com/package/dotenv) for environment variables.
 - [node-sass](https://www.npmjs.com/package/node-sass) for styling.
 - [ant design library](https://ant.design/) for some UI components
+- [React-Cookies](https://www.npmjs.com/package/react-cookie)for cookie handling.

@@ -11,7 +11,6 @@ export const NominationsContainer = ({ nominations, setNominations }) => {
       return nom != nominee;
     });
     setNominations(noms)
-    console.log("remove: ", nominee);
   };
 
   return (
