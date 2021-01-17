@@ -13,11 +13,15 @@ function App() {
   const [nominations, setNominations] = useState(
     cookies.nominationsCookie ? cookies.nominationsCookie : []
   );
-  const [isNomLimit, setIsNomLimit] = useState(false);
+  const [notification, setNotification] = useState(false);
+
+  const closeNotification = () => {
+    setNotification(false);
+  }
 
   const nominate = (movie) => {
     // set nominations if we're under the limit still
-    if (!isNomLimit) {
+    if (!notification) {
       setNominations([...nominations, movie]);
     }
   };
@@ -35,17 +39,17 @@ function App() {
 
     // check nominations limit - controls rendering of the Notification component
     if (nominations.length === 5) {
-      setIsNomLimit(true);
+      setNotification(true);
     } else {
-      setIsNomLimit(false);
+      setNotification(false);
     }
-  }, [nominations]);
+  }, [nominations, removeCookies, setCookies]);
 
   return (
     <div className="App">
       {/* displays nominations limit message */}
-      {isNomLimit === true ? (
-        <Notification message="You have reached your limit of 5 nominations!" />
+      {notification === true ? (
+        <Notification closeNotification={closeNotification} message="You have reached your limit of 5 nominations!" />
       ) : null}
 
       <h1>The Shoppies</h1>
