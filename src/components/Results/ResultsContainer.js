@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { ResultsRender } from "./ResultsRender";
 // api
-import { fetchData } from "../api";
+import { fetchData } from "../../api";
 
 export const ResultsContainer = ({searchTerm, nominate, nominations }) => {
   const [movies, setMovies] = useState([]);

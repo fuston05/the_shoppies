@@ -1,36 +1,48 @@
 import React, { useState, useEffect } from "react";
-import { Cookies, useCookies } from "react-cookie";
 // components
 import { ResultsContainer } from "./components/Results";
 import { SearchContainer } from "./components/Search";
 import { NominationsContainer } from "./components/Nominations";
+import { Notification } from "./components/Notification/Notification";
+// cookies
+import { Cookies, useCookies } from "react-cookie";
+import { updateCookieWithNominations, fetchCookie } from "./utils";
 
 function App() {
+  const [cookies, setCookies, removeCookies] = useCookies("nominationsCookie");
   const [searchTerm, setSearchTerm] = useState("");
-  const [cookies, setCookie, removeCookie] = useCookies("nominationsCookie");
   const [nominations, setNominations] = useState(
-    cookies.nominationsCookie ? cookies.nominationsCookie : []
+    fetchCookie("nominationsCookie", cookies)
+      ? fetchCookie("nominationsCookie")
+      : []
   );
+  const [isNomLimit, setIsNomLimit] = useState(false);
 
-  useEffect(() => {
-    if (!cookies.nominationsCookie && nominations.length) {
-      setCookie("nominationsCookie", nominations);
-    }
-  }, [nominations]);
-  
   const nominate = (movie) => {
-    // set nominations
-    setNominations([...nominations, movie]);
-    console.log("nominated");
+    console.log("nominate fired");
+    // set nominations if we're under the limit still
+    if (!isNomLimit) {
+      setNominations([...nominations, movie]);
+    }
   };
   
+  // eliminate race condition for setting the cookie to equal the nominaitons array.
+  useEffect(() => {
+    if (nominations.length > 0) {
+      updateCookieWithNominations(nominations, setCookies);
+    }
+    if (nominations.length === 5) {
+      setIsNomLimit(true);
+    } else {
+      setIsNomLimit(false);
+    }
+  }, [nominations])
+
   return (
     <div className="App">
-      {console.log("cookies: ", cookies.nominationsCookie)}
       {console.log("nominations: ", nominations)}
       <h1>The Shoppies</h1>
       <SearchContainer setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
-
       <section className="lowContainer">
         <ResultsContainer
           nominations={nominations}
@@ -38,10 +50,9 @@ function App() {
           searchTerm={searchTerm}
         />
 
+        {isNomLimit === true ? <Notification /> : null}
+
         <NominationsContainer
-          cookies= {cookies}
-          removeCookie={removeCookie}
-          setCookie={setCookie}
           setNominations={setNominations}
           nominations={nominations}
         />
