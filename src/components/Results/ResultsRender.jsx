@@ -1,5 +1,5 @@
 // ** RESULTS JSX FILE **
-import React, { useEffect } from "react";
+import React from "react";
 
 export const ResultsRender = ({ nominations, movies, nominate }) => {
 
@@ -8,13 +8,12 @@ export const ResultsRender = ({ nominations, movies, nominate }) => {
       <h2>results render!</h2>
       {movies &&
         movies.map((movie) => {
-          {
-            /* disable btn if already nominated */
-          }
           nominations.some((ele) => {
             if (ele.imdbID === movie.imdbID) {
               movie.dis = true;
+              return true;
             }
+            return false;
           });
           return (
             <div key={movie.imdbID} className="movieCard">
@@ -24,7 +23,7 @@ export const ResultsRender = ({ nominations, movies, nominate }) => {
                 {/* disable btn if already nominated */}
                 {/* -or- if you have 5 nominations */}
                 {(nominations && movie.dis) || nominations.length === 5 ? (
-                  <button disabled onClick={() => nominate(movie)}>
+                  <button disabled onClick={() => {nominate(movie)}}>
                     Nominate
                   </button>
                 ) : (
