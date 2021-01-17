@@ -19,7 +19,7 @@ export const ResultsContainer = ({searchTerm, nominate, nominations }) => {
 
   return (
     <section className="resultsCont">
-      <ResultsRender nominations={nominations} nominate= {nominate} movies={movies} />
+      <ResultsRender searchTerm={searchTerm} nominations={nominations} nominate= {nominate} movies={movies} />
     </section>
   );
 };
