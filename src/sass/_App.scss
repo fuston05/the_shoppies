@@ -1,6 +1,18 @@
 // ** APP STYLES **
 
-.App{
+.App {
   width: 100%;
-  padding: 1%;
+  padding: 2%;
+
+  section.lowContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @include media('600px'){
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
 }

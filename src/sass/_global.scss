@@ -1,10 +1,36 @@
 // global styles
-p{
+
+p {
   color: $pColor;
   font-size: $pSize;
 }
 
-h1{
+h1 {
   color: $h1Color;
   font-size: $h1Size;
+}
+
+h2 {
+  color: $h2Color;
+  font-size: $h2Size;
+}
+
+h3 {
+  color: $h3Color;
+  font-size: $h3Size;
+}
+
+h4 {
+  color: $h4Color;
+  font-size: $h4Size;
+}
+
+h5 {
+  color: $h5Color;
+  font-size: $h5Size;
+}
+
+label {
+  font-size: $h4Size;
+  color: $h4Color;
 }

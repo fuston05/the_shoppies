@@ -1,1 +1,22 @@
 // ** Results styles **
+section.resultsCont {
+  border: 1px solid #eee;
+  padding: 3%;
+  background-color: $blue;
+  min-height: 50vh;
+  width: 48%;
+
+  @include media('600px'){
+    width: 100%;
+    margin-bottom: 3%;
+  }
+
+  span.movieInfo {
+    font-size: $pSize;
+    color: $pColor;
+  }
+
+  span.nominateBtn {
+    margin-left: 1%;
+  }
+}

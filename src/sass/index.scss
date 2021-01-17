@@ -1,8 +1,10 @@
 // index SCSS file.
 @import "./reset";
 @import "./vars";
+@import './mixins';
 @import "./global";
 @import "./App";
 @import "./Search";
 @import "./Results";
+@import './Nominations';
 @import "./Notification";
