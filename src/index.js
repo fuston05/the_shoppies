@@ -2,14 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./sass/index.scss";
-import { CookiesProvider } from "react-cookie";
+
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <CookiesProvider>
       <App />
-    </CookiesProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

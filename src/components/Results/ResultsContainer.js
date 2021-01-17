@@ -10,6 +10,7 @@ export const ResultsContainer = ({searchTerm, nominate, nominations }) => {
   useEffect(() => {
     fetchData(searchTerm)
       .then((res) => {
+        console.log('res: ', res);
         setMovies(res.data.Search);
       })
       .catch((err) => {
