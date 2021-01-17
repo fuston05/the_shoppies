@@ -11,8 +11,6 @@ export const ResultsContainer = ({searchTerm, nominate, nominations }) => {
     fetchData(searchTerm)
       .then((res) => {
         setMovies(res.data.Search);
-        console.log("res: ", res.data);
-        console.log("totalResults: ", res.data.totalResults);
       })
       .catch((err) => {
         console.log("error: ", err);

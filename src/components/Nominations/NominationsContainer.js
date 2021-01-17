@@ -14,10 +14,8 @@ export const NominationsContainer = ({
     const noms = await nominations.filter(nom => nom !== nominee);
     // remove the disabled prop from the 'nominate' btn
     nominee.dis = false;
-    console.log('noms from "removeNominee": ', noms)
     await setNominations(noms);
     // if all nominations are removed, remove the cookie
-    console.log('nominations after removeNominee: ', nominations)
   };
 
   return (

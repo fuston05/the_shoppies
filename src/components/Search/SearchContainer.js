@@ -11,7 +11,6 @@ export const SearchContainer = ({setSearchTerm, searchTerm}) => {
   
   return (
     <section className="searchCont">
-      {console.log('search: ', searchTerm)}
       <RenderSearch handleChange= {handleChange} searchTerm= {searchTerm}/>
     </section>
   );

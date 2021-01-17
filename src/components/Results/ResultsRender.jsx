@@ -5,7 +5,6 @@ export const ResultsRender = ({ nominations, movies, nominate }) => {
 
   return (
     <div className="movieCard">
-      <h2>results render!</h2>
       {movies &&
         movies.map((movie) => {
           nominations.some((ele) => {

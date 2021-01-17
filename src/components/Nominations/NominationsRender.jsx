@@ -6,6 +6,7 @@ export const NominationsRender = ({ nominations, removeNominee }) => {
   return (
     <section className="nominations">
       <h3>Nominations</h3>
+      {!nominations.length && <p>Nominate some movies!</p>}
       {nominations &&
         nominations.map((nominee) => {
           return (
