@@ -45,7 +45,7 @@ function App() {
     <div className="App">
       {/* displays nominations limit message */}
       {isNomLimit === true ? (
-        <Notification message="You have reach your limit of 5 nominations!" />
+        <Notification message="You have reached your limit of 5 nominations!" />
       ) : null}
 
       <h1>The Shoppies</h1>

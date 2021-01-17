@@ -1,1 +1,28 @@
 // ** NOTIFICATION COMPONENT STYLES **
+
+.notificationCont{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: 1px solid #eee;
+  font-size: $pSize;
+  background-color: #999;
+  padding: 1.8%;
+
+  .notificationClose{
+    position: absolute;
+    font-size: 1.4rem;
+    top: 0px;
+    right: 5px;
+
+    &:hover{
+      cursor: pointer;
+      opacity: 0.6;
+      color: $offWhite;
+    }
+  }
+
+  .notificationText{
+    color: $offWhite;
+  }
+}
