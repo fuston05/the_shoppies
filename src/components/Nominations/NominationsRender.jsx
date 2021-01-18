@@ -11,7 +11,7 @@ export const NominationsRender = ({ nominations, removeNominee }) => {
         nominations.map((nominee) => {
           return (
             <div className="nomineeCard" key={nominee.imdbID}>
-              <span className= 'movieInfo'>{nominee.Title}</span>
+              <span className= 'movieInfo'>{nominee.Title} - </span>
               <span className= 'movieInfo'>{nominee.Year}</span>
               <span className= 'nominateBtn'>
                 <button

@@ -9,17 +9,27 @@ export const ResultsRender = ({
 }) => {
   return (
     <div className="movieCard">
-      <h3>{`Results for '${searchTerm || '...'} `}'</h3>
+      <h3>{`Results for '${searchTerm || "..."} `}'</h3>
       {movies &&
         movies.map((movie) => {
+          // out of time to get '.includes' to working
+          // so I had to go with this for now
+        // not fully working properly, ran out of time for the deadline
+          {
+            nominations.forEach((nominee) => {
+              if (nominee.imdbID === movie.imdbID) {
+                movie.dis = true;
+              }
+            });
+          }
           return (
             <div key={movie.imdbID} className="movieCard">
-              <span className= 'movieInfo'>{movie.Title}</span>
-              <span className= 'movieInfo'>{movie.Year}</span>
-              <span className= 'nominateBtn'>
+              <span className="movieInfo">{movie.Title} - </span>
+              <span className="movieInfo">{movie.Year}</span>
+              <span className="nominateBtn">
                 {/* disable btn if already nominated */}
                 {/* -or- if you have 5 nominations */}
-                {(nominations && nominations.includes(movie)) ||
+                {(nominations && movie.dis === true) ||
                 nominations.length === 5 ? (
                   <button
                     disabled

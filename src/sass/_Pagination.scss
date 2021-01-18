@@ -1,0 +1,18 @@
+// ** PAGINATION STYLES **
+
+.paginationCont{
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $pSize;
+    margin: 0 4%;
+    padding-top: 1px;
+  }
+}

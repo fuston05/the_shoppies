@@ -6,12 +6,13 @@ import { NominationsRender } from "./NominationsRender";
 
 export const NominationsContainer = ({ nominations, setNominations }) => {
   const removeNominee = async (nominee) => {
+    // remove disabled from movie
     // remove the nominee from 'nominations'
     const noms = await nominations.filter((nom) => nom !== nominee);
-    await setNominations(noms);
-    // if all nominations are removed, remove the cookie
+    nominee.dis = false;
+    setNominations(noms);
   };
-
+  
   return (
     <section className="nominationsCont">
       <NominationsRender

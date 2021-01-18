@@ -10,6 +10,9 @@ import { useCookies } from "react-cookie";
 function App() {
   const [cookies, setCookies, removeCookies] = useCookies("nominationsCookie");
   const [searchTerm, setSearchTerm] = useState("");
+  const [movies, setMovies] = useState([]);
+  const [totalPages, setTotalPages] = useState();
+  const [page, setPage] = useState(1);
   const [nominations, setNominations] = useState(
     cookies.nominationsCookie ? cookies.nominationsCookie : []
   );
@@ -17,7 +20,7 @@ function App() {
 
   const closeNotification = () => {
     setNotification(false);
-  }
+  };
 
   const nominate = (movie) => {
     // set nominations if we're under the limit still
@@ -49,15 +52,29 @@ function App() {
     <div className="App">
       {/* displays nominations limit message */}
       {notification === true ? (
-        <Notification closeNotification={closeNotification} message="You have reached your limit of 5 nominations!" />
+        <Notification
+          closeNotification={closeNotification}
+          message="You have reached your limit of 5 nominations!"
+        />
       ) : null}
 
       <h1>The Shoppies</h1>
 
-      <SearchContainer setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
+      <SearchContainer
+        setTotalPages={setTotalPages}
+        page={page}
+        setPage={setPage}
+        setMovies={setMovies}
+        setSearchTerm={setSearchTerm}
+        searchTerm={searchTerm}
+      />
 
       <section className="lowContainer">
         <ResultsContainer
+          totalPages={totalPages}
+          page={page}
+          setPage={setPage}
+          movies={movies}
           nominations={nominations}
           nominate={nominate}
           searchTerm={searchTerm}
