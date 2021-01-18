@@ -67,3 +67,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 #### NOTES
 > I had some issues when comparing the nominations list to the currently nominated movie in order to decide weather to render a disabled 'Nominate' button or not in the results view. I was cheking this using 'nominations.includes(movie) inside of a map()  method but later it broke, and I ran out of time to figure it out. so, I did some hacky things with a foreach() to add a 'dis' bool property to each movie so that I caould use that for the comparison.
 > * NOTE: Also, I want to mention that I am not a designer what-so-ever! So, I chose to focus on other things instead the design aspects. I did however manage to make it mobile responsive.
+> BUGS: There are a couple other small bugs that will likely go unnoticed. Again, I ran out of time to work them out. This was a fun project!
